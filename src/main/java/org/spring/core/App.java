@@ -1,6 +1,8 @@
 package org.spring.core;
 
 import org.spring.core.collection.Employee;
+import org.spring.core.reference.DetailedAddress;
+import org.spring.core.reference.PinCode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -32,5 +34,11 @@ public class App
         System.out.println(employee.getEmployeeAddress());
         System.out.println(employee.getCourse());
         System.out.println(employee);
+
+        DetailedAddress detailedAddress = (DetailedAddress) applicationContext.getBean("detailedAddress");
+        PinCode pinCode = (PinCode) applicationContext.getBean("pinCode");
+        System.out.println(detailedAddress.getPinCode().getPinCode());
+        System.out.println(detailedAddress);
+
     }
 }

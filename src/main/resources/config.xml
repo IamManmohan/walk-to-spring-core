@@ -65,5 +65,15 @@
         </property>
     </bean>
 
+    <!--Dependencies injection of reference-->
+    <bean class="org.spring.core.reference.PinCode" name="pinCode">
+        <property name="pinCode" value="841235"/>
+    </bean>
+
+    <bean class="org.spring.core.reference.DetailedAddress" name="detailedAddress">
+        <property name="address" value="Siwan"/>
+        <property name="pinCode" ref="pinCode"/>
+    </bean>
+
 
 </beans>
