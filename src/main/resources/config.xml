@@ -74,6 +74,11 @@
         <property name="address" value="Siwan"/>
         <property name="pinCode" ref="pinCode"/>
     </bean>
+    
+    <bean class="org.spring.core.constructor.injection.Person" name="person">
+        <constructor-arg value="Deepak"/>
+        <constructor-arg value="12" type="int"/>
+    </bean>
 
 
 </beans>

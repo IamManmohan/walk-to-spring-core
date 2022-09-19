@@ -1,6 +1,7 @@
 package org.spring.core;
 
 import org.spring.core.collection.Employee;
+import org.spring.core.constructor.injection.Person;
 import org.spring.core.reference.DetailedAddress;
 import org.spring.core.reference.PinCode;
 import org.springframework.context.ApplicationContext;
@@ -39,6 +40,9 @@ public class App
         PinCode pinCode = (PinCode) applicationContext.getBean("pinCode");
         System.out.println(detailedAddress.getPinCode().getPinCode());
         System.out.println(detailedAddress);
+
+        Person person = (Person) applicationContext.getBean("person");
+        System.out.println(person);
 
     }
 }
