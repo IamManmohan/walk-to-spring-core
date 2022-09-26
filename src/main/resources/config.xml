@@ -8,6 +8,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:annotation-config></context:annotation-config>
     <!--  this is our beans by using values as element-->
     <bean class="org.spring.core.Student" name="student">
         <property name="studentId">
@@ -79,6 +80,22 @@
         <constructor-arg value="Deepak"/>
         <constructor-arg value="12" type="int"/>
     </bean>
-
-
+    <bean class="org.spring.core.bean.life.cycle.Spring" name="spring" init-method="init" destroy-method="destroy">
+        <property name="lifeCycle" value="BeanLifeCycle"/>
+    </bean>
+    <bean class="org.spring.core.life.cycle.usingInterface.LifeCycleUsingInterface" name="lifeCycleUsingInterface">
+        <property name="lifeCycleInterface" value="Life cycle of bean using Interface"/>
+    </bean>
+    <bean class="org.spring.core.xml.auto.wire.Season" name="season">
+        <property name="seasonName" value="Rainy"/>
+    </bean>
+    <bean class="org.spring.core.xml.auto.wire.Weather" name="weather" autowire="byName">
+        <property name="weatherName" value="Summer"/>
+    </bean>
+    <bean class="org.spring.core.annotation.autowired.Supply" name="supply">
+        <property name="rateOfSupply" value="Low rate of supply"/>
+    </bean>
+    <bean class="org.spring.core.annotation.autowired.Demand" name="demand">
+        <property name="rateOfDemand" value="High rate of Demand"/>
+    </bean>
 </beans>

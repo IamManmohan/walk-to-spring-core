@@ -1,9 +1,13 @@
 package org.spring.core;
 
+import org.spring.core.annotation.autowired.Demand;
+import org.spring.core.bean.life.cycle.Spring;
 import org.spring.core.collection.Employee;
 import org.spring.core.constructor.injection.Person;
+import org.spring.core.life.cycle.usingInterface.LifeCycleUsingInterface;
 import org.spring.core.reference.DetailedAddress;
 import org.spring.core.reference.PinCode;
+import org.spring.core.xml.auto.wire.Weather;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -43,6 +47,19 @@ public class App
 
         Person person = (Person) applicationContext.getBean("person");
         System.out.println(person);
+
+        Spring spring = (Spring) applicationContext.getBean("spring");
+        System.out.println(spring);
+
+        LifeCycleUsingInterface lifeCycleUsingInterface = (LifeCycleUsingInterface) applicationContext
+                .getBean("lifeCycleUsingInterface");
+        System.out.println(lifeCycleUsingInterface);
+
+        Weather weather = (Weather) applicationContext.getBean("weather");
+        System.out.println(weather);
+
+        Demand demand = (Demand) applicationContext.getBean("demand");
+        System.out.println(demand);
 
     }
 }
